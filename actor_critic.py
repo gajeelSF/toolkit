@@ -110,7 +110,7 @@ def main():
                      env.action_space,128)
     optimizer = optim.Adam(policy.parameters(), lr=args.lr)
 
-    for t in range(100000):
+    for t in range(10000):
         rewards, values, action_log_probs = generateEpisode(env,policy,args)
         updatePolicy(optimizer, rewards, values, action_log_probs, args)
 
